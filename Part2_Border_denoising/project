@@ -1,0 +1,135 @@
+from skimage import io
+import csv
+import numpy as np
+import random
+import pickle
+import matplotlib.pyplot as plt
+import cv2
+# train=np.zeros((20,20,3,10000))
+# num=0
+# #load url of images from csv
+# with open('images.csv','rt') as csvfile:
+#     reader = csv.DictReader(csvfile)
+#     column = [row['OriginalURL'] for row in reader]
+# a=[random.randint(30000,39999) for _ in range(10000)] #randomly choose 10000 images from each group
+# print(len(column))
+# for n in a: #read images from url
+#     img_src=column[n]
+#     cap = cv2.VideoCapture(img_src)
+#     if( cap.isOpened() ) :
+#         image = io.imread(img_src)
+#         k=image.shape
+#     # print(len(k))
+#         if len(k)<3:  #get rid of wrong images
+#             continue
+#         else:
+#             x=image.shape[0]
+#             y=image.shape[1]
+#             for m in range(10): #crop the images to 20x20
+#                 x_cut=random.randint(20,x)
+#                 y_cut=random.randint(20,y)
+#                 img_crop=image[x_cut-20:x_cut,y_cut-20:y_cut,:]
+#                 # img_crop=(img_crop-128)/255 #preprocess the image
+#                 train[:,:,:,num]=img_crop
+#                 num=num+1
+#     print(num)
+#     if num==10000: #choose 10000 small parts from each group
+#         break
+# print(train.shape)
+# print(train[:,:,:,7777]/255.)
+# plt.imshow(train[:,:,:,7777]/255.)
+# plt.show()
+
+# f=open('test_20','wb')
+# pickle.dump(train,f)
+# f.close()
+# k0=open('test_20','rb')  
+# test_20=pickle.load(k0)
+# k0.close()
+# test_16=test_20[2:18,2:18,:,:]
+# f1=open('test_16','wb')
+# pickle.dump(test_16,f1)
+# f1.close()
+k0=open('test_16','rb')  
+test_16=pickle.load(k0)
+plt.imshow(test_16[:,:,:,77]+128/255.)
+plt.show()
+
+
+# k0=open('train_gr0','rb')  
+# b0=pickle.load(k0)
+# k1=open('train_gr1','rb')  
+# b1=pickle.load(k1)
+# k2=open('train_gr2','rb')  
+# b2=pickle.load(k2)
+# k3=open('train_gr3','rb')  
+# b3=pickle.load(k3)
+# k4=open('train4','rb')  
+# b4=pickle.load(k4)
+# k5=open('train5','rb')  
+# b5=pickle.load(k5)
+# k6=open('train6','rb')  
+# b6=pickle.load(k6)
+# k7=open('train7','rb')  
+# b7=pickle.load(k7)
+# k8=open('train8','rb')  
+# b8=pickle.load(k8)
+# k9=open('train9','rb')  
+# b9=pickle.load(k9)
+
+# k=np.concatenate((b0,b1),axis=3)
+# k=np.concatenate((k,b2),axis=3)
+# k=np.concatenate((k,b3),axis=3)
+# k=np.concatenate((k,b4),axis=3)
+# k=np.concatenate((k,b5),axis=3)
+# k=np.concatenate((k,b6),axis=3)
+# k=np.concatenate((k,b7),axis=3)
+# k=np.concatenate((k,b8),axis=3)
+# k=np.concatenate((k,b9),axis=3)
+# num=0
+# kk=np.zeros((20,20,3,100000))
+# a=[random.randint(0,99999) for _ in range(100000)]
+# for n in a:
+#     kk[:,:,:,num]=k[:,:,:,n]
+#     num=num+1
+# plt.imshow(kk[:,:,:,77777]/255.)
+# plt.show()
+
+
+# train_20=k[:,:,:,0:70000]
+# validation_20=k[:,:,:,70000:80000]
+# test_20=k[:,:,:,80000:100000]
+# train_16=train_20[2:18,2:18,:,:]
+# validation_16=validation_20[2:18,2:18,:,:]
+# test_16=test_20[2:18,2:18,:,:]
+# f1=open('train_20','wb')
+# pickle.dump(train_20,f1)
+# f1.close()
+# f2=open('validation_20','wb')
+# pickle.dump(validation_20,f2)
+# f2.close()
+# f3=open('test_20','wb')
+# pickle.dump(test_20,f3)
+# f3.close()
+# f4=open('train_16','wb')
+# pickle.dump(train_16,f4)
+# f4.close()
+# f5=open('validation_16','wb')
+# pickle.dump(validation_16,f5)
+# f5.close()
+# f6=open('test_16','wb')
+# pickle.dump(test_16,f6)
+# f6.close()
+# k=np.array([5,7,10,11,12,13,14,15,16,17])
+# f=open('test_16','rb')
+# train_20=pickle.load(f)
+# for n in k:
+#     plt.imshow(train_20[:,:,:,n]/255.)
+#     plt.show()
+
+
+
+
+
+
+
